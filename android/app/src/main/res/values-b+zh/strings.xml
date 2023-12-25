@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">伟程手记</string>
+    <string name="back_button">返回</string>
+    <string name="appwidget_text">伟程手记</string>
+    <string name="version">231225</string>
+    <string name="build_type">beta</string>
+    <string name="app_widget_description">这是小组件的说明</string>
+    <string name="team_info">伟程呢😄😁😘</string>
+    <string name="settings">设置</string>
+    <string name="edit">编辑</string>
+    <string name="people">好友</string>
+    <string name="download_original_file">下载原图</string>
+    <string name="check_internet_text">请检查网络连接，然后再试一次。</string>
+    <string name="no_internet_connection">没网啦！小可爱</string>
+    <string name="last_sentence">Kotlin学习，个人项目的一部分。</string>
+    <string name="acknowledgments">第一个版本主逻辑是在231218和231223之间使用ChatGPT(GPT 3.5)共同完成的。</string>
+    <string name="contributions"><![CDATA[由伟程独立设计开发]]></string>
+    <string name="server_disconnected">服务器断开连接</string>
+    <string name="affirm_1">当你选择拥抱积极的一面时，美好的时刻就会如期而至。</string>
+    <string name="affirm_2">你每一次乐观的态度都能让身边的事物变得更积极。</string>
+    <string name="affirm_3">每当幸福的光辉照耀你的脸时，就会发生快乐的事情。</string>
+    <string name="affirm_4">每当你走出舒适区，非凡的机会就会出现。</string>
+    <string name="affirm_5">创造力在好奇心和探索新想法的意愿中蓬勃发展。</string>
+    <string name="affirm_6">当你面对挑战时，学习的韧性和决心会得到增强。</string>
+    <string name="affirm_7">通过开放的沟通和真诚的理解，有意义的关系会开花结果。</string>
+    <string name="affirm_8">成功往往伴随着努力探索、坚持不懈和追求卓越的决心。</string>
+    <string name="affirm_9">智慧来自于塑造你的观点和洞察力的经历。</string>
+    <string name="affirm_10">当我们在思想上协作，将不同的想法摆上桌面时，新的解题方向就会打开。</string>
+    <string name="title_main">(｡･∀･)ﾉﾞ嗨，这里是伟程手记</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
+    <string name="select_date">选择日期</string>
+    <string name="change_date">更改日期</string>
+    <string name="software_updates_source_code"><![CDATA[软件更新和源代码]]></string>
+    <string name="join_weicheng_log_beta_program">加入伟程手记测试版(Beta)计划</string>
+    <string name="beta_notice">测试版程序有更高级的功能和更频繁的更新，但更容易遇到错误。</string>
+    <string name="language">语言</string>
+    <string name="latest_version">"最新版本: "</string>
+    <string name="version_update_notes">版本更新日志: \n</string>
+    <string name="source_code">查看源代码</string>
+    <string name="server_disconnected_simple">服务器已断开</string>
+    <string name="current_version">"此版本: "</string>
+    <string name="dismiss">知道了</string>
+    <string name="developer_title">开发者信息</string>
+    <string name="server_connected_updates_available"><![CDATA[服务器已连接,有更新可用]]></string>
+    <string name="download_upgrade_to_the_latest_stable"><![CDATA[下载并升级到最新的稳定版]]></string>
+    <string name="server_connected_downgrades_available"><![CDATA[服务器已连接，有降级可用]]></string>
+    <string name="download_reinstall_the_latest_version"><![CDATA[下载并重新安装最新版本]]></string>
+    <string name="download_the_latest_version">下载最新版本</string>
+    <string name="server_connected_running_the_latest_version"><![CDATA[服务器已连接,并正在运行最新版本]]></string>
+    <string name="good_night">晚安哦 🌜💤</string>
+    <string name="good_morning_early">早上好呀 🌞💫</string>
+    <string name="good_morning_late">上午好哒 🌈🌞</string>
+    <string name="good_afternoon">下午好呢 🌝</string>
+    <string name="good_evening">晚上好 🌠</string>
+    <string name="cellular_or_metered_network_detected">检测到流量或计费网络</string>
+    <string name="no_cellular_allowed">程序不允许使用流量网络</string>
+    <string name="no_cellular_allowed_description">这个程序暂时不支持使用流量访问，因为照片和文字的加载频繁，为了节约你的通信费用请在Wifi环境下重试。</string>
+    <string name="source_update_notes">查看完整更新日志</string>
+    <string name="in_beta">测试版</string>
+    <string name="opensourceinfo">本项目在MIT许可证下开源</string>
+    <array name="com_google_android_gms_fonts_certs">
+        <item>@array/com_google_android_gms_fonts_certs_dev</item>
+        <item>@array/com_google_android_gms_fonts_certs_prod</item>
+    </array>
+    <string-array name="com_google_android_gms_fonts_certs_dev">
+        <item>
+            MIIEqDCCA5CgAwIBAgIJANWFuGx90071MA0GCSqGSIb3DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTAeFw0wODA0MTUyMzM2NTZaFw0zNTA5MDEyMzM2NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbTCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBANbOLggKv+IxTdGNs8/TGFy0PTP6DHThvbbR24kT9ixcOd9W+EaBPWW+wPPKQmsHxajtWjmQwWfna8mZuSeJS48LIgAZlKkpFeVyxW0qMBujb8X8ETrWy550NaFtI6t9+u7hZeTfHwqNvacKhp1RbE6dBRGWynwMVX8XW8N1+UjFaq6GCJukT4qmpN2afb8sCjUigq0GuMwYXrFVee74bQgLHWGJwPmvmLHC69EH6kWr22ijx4OKXlSIx2xT1AsSHee70w5iDBiK4aph27yH3TxkXy9V89TDdexAcKk/cVHYNnDBapcavl7y0RiQ4biu8ymM8Ga/nmzhRKya6G0cGw8CAQOjgfwwgfkwHQYDVR0OBBYEFI0cxb6VTEM8YYY6FbBMvAPyT+CyMIHJBgNVHSMEgcEwgb6AFI0cxb6VTEM8YYY6FbBMvAPyT+CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEQMA4GA1UEChMHQW5kcm9pZDEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDEiMCAGCSqGSIb3DQEJARYTYW5kcm9pZEBhbmRyb2lkLmNvbYIJANWFuGx90071MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEEBQADggEBABnTDPEF+3iSP0wNfdIjIz1AlnrPzgAIHVvXxunW7SBrDhEglQZBbKJEk5kT0mtKoOD1JMrSu1xuTKEBahWRbqHsXclaXjoBADb0kkjVEJu/Lh5hgYZnOjvlba8Ld7HCKePCVePoTJBdI4fvugnL8TsgK05aIskyY0hKI9L8KfqfGTl1lzOv2KoWD0KWwtAWPoGChZxmQ+nBli+gwYMzM1vAkP+aayLe0a1EQimlOalO762r0GXO0ks+UeXde2Z4e+8S/pf7pITEI/tP+MxJTALw9QUWEv9lKTk+jkbqxbsh8nfBUapfKqYn0eidpwq2AzVp3juYl7//fKnaPhJD9gs=
+        </item>
+    </string-array>
+    <string-array name="com_google_android_gms_fonts_certs_prod">
+        <item>
+            MIIEQzCCAyugAwIBAgIJAMLgh0ZkSjCNMA0GCSqGSIb3DQEBBAUAMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDAeFw0wODA4MjEyMzEzMzRaFw0zNjAxMDcyMzEzMzRaMHQxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtHb29nbGUgSW5jLjEQMA4GA1UECxMHQW5kcm9pZDEQMA4GA1UEAxMHQW5kcm9pZDCCASAwDQYJKoZIhvcNAQEBBQADggENADCCAQgCggEBAKtWLgDYO6IIrgqWbxJOKdoR8qtW0I9Y4sypEwPpt1TTcvZApxsdyxMJZ2JORland2qSGT2y5b+3JKkedxiLDmpHpDsz2WCbdxgxRczfey5YZnTJ4VZbH0xqWVW/8lGmPav5xVwnIiJS6HXk+BVKZF+JcWjAsb/GEuq/eFdpuzSqeYTcfi6idkyugwfYwXFU1+5fZKUaRKYCwkkFQVfcAs1fXA5V+++FGfvjJ/CxURaSxaBvGdGDhfXE28LWuT9ozCl5xw4Yq5OGazvV24mZVSoOO0yZ31j7kYvtwYK6NeADwbSxDdJEqO4k//0zOHKrUiGYXtqw/A0LFFtqoZKFjnkCAQOjgdkwgdYwHQYDVR0OBBYEFMd9jMIhF1Ylmn/Tgt9r45jk14alMIGmBgNVHSMEgZ4wgZuAFMd9jMIhF1Ylmn/Tgt9r45jk14aloXikdjB0MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLR29vZ2xlIEluYy4xEDAOBgNVBAsTB0FuZHJvaWQxEDAOBgNVBAMTB0FuZHJvaWSCCQDC4IdGZEowjTAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBAUAA4IBAQBt0lLO74UwLDYKqs6Tm8/yzKkEu116FmH4rkaymUIE0P9KaMftGlMexFlaYjzmB2OxZyl6euNXEsQH8gjwyxCUKRJNexBiGcCEyj6z+a1fuHHvkiaai+KL8W1EyNmgjmyy8AW7P+LLlkR+ho5zEHatRbM/YAnqGcFh5iZBqpknHf1SKMXFh4dd239FJ1jWYfbMDMy3NS5CTMQ2XFI1MvcyUTdZPErjQfTbQe3aDQsQcafEQPD+nqActifKZ0Np0IS9L9kR/wbNvyz6ENwPiTrjV2KRkEjH78ZMcUQXg0L3BYHJ3lc69Vs5Ddf9uUGGMYldX3WfMBEmh/9iFBDAaTCK
+        </item>
+    </string-array>
+</resources>
