@@ -5,6 +5,7 @@
 
 ## Downloads & Releases
 231225 Beta (APK file): <a href="https://weicheng.app/cms/weicheng_log/downloads/231225.beta.apk">https://weicheng.app/cms/weicheng_log/downloads/231225.beta.apk</a>
+
 231225 Beta (Release Document): <a href="https://weicheng.app/cms/weicheng_log/downloads/231225.beta.apk">https://weicheng.app/cms/weicheng_log/downloads/WeichengLog231225Beta.pdf</a>
 
 ## Screenshots
