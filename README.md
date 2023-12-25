@@ -3,6 +3,12 @@
 ## Overview
 "Weicheng Log" is a series of journaling apps developed for Android (planned for IOS and the others) using the latest Jetpack Compose framework. The apps are designed to help me manage daily activities, stay up-to-date with my life events, and promote a healthy and meaningful lifestyle.
 
+## Downloads & Releases
+Weicheng Log 231225 Beta (APK file): <a href="https://weicheng.app/cms/weicheng_log/downloads/231225.beta.apk">https://weicheng.app/cms/weicheng_log/downloads/231225.beta.apk</a>
+
+## Screenshots
+![Screenshots showing the main screen](android/screenshots_main.png "Screenshots showing the main screen (Android API 34)")
+
 ## Features
 
 ### 1. Intuitive User Interface
