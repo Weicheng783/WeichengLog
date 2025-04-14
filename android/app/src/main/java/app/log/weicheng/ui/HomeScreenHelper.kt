@@ -175,7 +175,7 @@ fun PhotoCard(photo: Photo, number: Int, total: Int) {
 suspend fun fetchLatest(): LatestResponse {
     val client = OkHttpClient()
     val request = Request.Builder()
-        .url("https://weicheng.app/cms/weicheng_log/latest.txt")
+        .url("http://127.0.0.1/cms/weicheng_log/latest.txt")
         .build()
 
     return withContext(Dispatchers.IO) {
@@ -202,7 +202,7 @@ suspend fun fetchLatest(): LatestResponse {
 suspend fun fetchElement(latest: String): ElementResponse {
     val client = OkHttpClient()
     val request = Request.Builder()
-        .url("https://weicheng.app/cms/weicheng_log/$latest.json")
+        .url("http://127.0.0.1/cms/weicheng_log/$latest.json")
         .build()
 
     return withContext(Dispatchers.IO) {

@@ -24,10 +24,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Android
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Movie
 import androidx.compose.material.icons.filled.People
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Movie
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.AssistChip
@@ -70,6 +72,7 @@ import app.log.weicheng.ui.SettingsScreen
 enum class ScreenHelpers(@StringRes val title: Int) {
     Start(title = R.string.app_name),
     Settings(title = R.string.settings),
+    Dance(title = R.string.dance),
     Edit(title = R.string.edit),
     People(title = R.string.people),
 }
@@ -287,6 +290,33 @@ fun BottomAppBarExample(
 //        ) {
 //            IconButton(
 //                onClick = {
+//                    if(selectedTab != ScreenHelpers.Dance) {
+//                        selectedTab = ScreenHelpers.Dance
+//                        navController.navigate(ScreenHelpers.Dance.name) {
+//                            popUpTo(ScreenHelpers.Dance.name) {
+//                                inclusive = true
+//                            }
+//                        }
+//                    }
+//                },
+//                modifier = Modifier.weight(1f)
+//            ) {
+//                if(selectedTab == ScreenHelpers.Dance) {
+//                    Icon(Icons.Filled.Movie, contentDescription = "Dance Record")
+//                }else{
+//                    Icon(Icons.Outlined.Movie, contentDescription = "Dance Record")
+//                }
+//            }
+//        }
+
+//        AnimatedVisibility(
+//            visible = true,
+//            enter = fadeIn() + slideInHorizontally(),
+//            exit = fadeOut() + slideOutHorizontally(),
+//            modifier = Modifier.weight(1f)
+//        ) {
+//            IconButton(
+//                onClick = {
 //                    if(selectedTab != ScreenHelpers.Edit) {
 //                        selectedTab = ScreenHelpers.Edit
 //                    }
@@ -370,6 +400,15 @@ fun LogApp(
                         navigateUp = { navController.navigateUp() }
                     )
                 }
+                ScreenHelpers.Dance.name -> {
+                    LogAppBar(
+                        currentScreen = currentScreen,
+                        canNavigateBack = false,
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = stringResource(R.string.back_button),
+                        navigateUp = { navController.navigateUp() }
+                    )
+                }
             }
         },
         bottomBar = {
@@ -381,14 +420,19 @@ fun LogApp(
             startDestination = ScreenHelpers.Start.name,
             modifier = Modifier.padding(innerPadding)
         ) {
+            composable(route = ScreenHelpers.Dance.name) {
+                if (SdkExtensions.getExtensionVersion(Build.VERSION_CODES.R) >= 2) {
+                    HomeScreen(modifier = Modifier, context)
+                }
+            }
             composable(route = ScreenHelpers.Start.name) {
                 if (SdkExtensions.getExtensionVersion(Build.VERSION_CODES.R) >= 2) {
-                    HomeScreen()
+                    HomeScreen(modifier = Modifier, context)
                 }
             }
             composable(route = ScreenHelpers.Settings.name) {
                 SettingsScreen(
-                    navController
+                    navController, context
                 )
             }
         }
