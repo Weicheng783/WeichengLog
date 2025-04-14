@@ -54,29 +54,30 @@ import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.preferencesKey
-import androidx.datastore.preferences.createDataStore
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.navigation.NavController
 import app.log.weicheng.MainActivity
 import app.log.weicheng.R
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import androidx.datastore.preferences.core.stringPreferencesKey
 
 
 lateinit var dataStore: DataStore<Preferences>
 suspend fun saveSettings(key: String, value: String){
-    val dataStoreKey = preferencesKey<String>(key)
+    val dataStoreKey = stringPreferencesKey(key)
     dataStore.edit{settings ->
         settings[dataStoreKey] = value
     }
 }
 
 suspend fun readSettings(key: String): String? {
-    val dataStoreKey = preferencesKey<String>(key)
+    val dataStoreKey = stringPreferencesKey(key)
     val preferences = dataStore.data.first()
     return preferences[dataStoreKey]
 }
@@ -84,9 +85,9 @@ suspend fun readSettings(key: String): String? {
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SettingsScreen(navController: NavController) {
+fun SettingsScreen(navController: NavController, context: Context) {
     var selectedLanguage by remember { mutableStateOf(supportedLanguages.first()) }
-    dataStore = LocalContext.current.createDataStore(name = "isBeta")
+    dataStore = context.dataStore
     LaunchedEffect(Unit) {
         withContext(Dispatchers.IO) {
             val temp = readSettings("language")
@@ -123,21 +124,21 @@ fun SettingsScreen(navController: NavController) {
 //                Section3()
 //                Spacer(modifier = Modifier.height(16.dp))
                 Section4()
-                Spacer(modifier = Modifier.height(16.dp))
-                AsyncImage(
-                    model = ImageRequest.Builder(LocalContext.current)
-                        .data(R.drawable.cms)
-                    .build(),
-                    contentDescription = "cms",
-                    modifier = Modifier.fillMaxSize()
-                )
-                AsyncImage(
-                    model = ImageRequest.Builder(LocalContext.current)
-                        .data(R.drawable.main)
-                        .build(),
-                    contentDescription = "main",
-                    modifier = Modifier.fillMaxSize()
-                )
+//                Spacer(modifier = Modifier.height(16.dp))
+//                AsyncImage(
+//                    model = ImageRequest.Builder(LocalContext.current)
+//                        .data(R.drawable.cms)
+//                    .build(),
+//                    contentDescription = "cms",
+//                    modifier = Modifier.fillMaxSize()
+//                )
+//                AsyncImage(
+//                    model = ImageRequest.Builder(LocalContext.current)
+//                        .data(R.drawable.main)
+//                        .build(),
+//                    contentDescription = "main",
+//                    modifier = Modifier.fillMaxSize()
+//                )
             }
         }
     )
@@ -331,7 +332,7 @@ fun LanguagePickerScreen() {
     }
 }
 
-@SuppressLint("CoroutineCreationDuringComposition")
+@SuppressLint("CoroutineCreationDuringComposition", "SuspiciousIndentation")
 @Composable
 fun UpdateCheckScreen() {
     var result by remember { mutableStateOf<List<String>?>(null) }
@@ -345,14 +346,14 @@ fun UpdateCheckScreen() {
     val isNotMeteredNetwork = isMeteredNetwork(connectivityManager)
 
     // Use LaunchedEffect to fetch updates when the composable is first composed
-    if (isNotMeteredNetwork) {
+//    if (isNotMeteredNetwork) {
         LaunchedEffect(Unit) {
             try {
                 withContext(Dispatchers.IO) {
-                    result = fetchNewVersion(
-                        "https://weicheng.app/cms/weicheng_log/version.txt",
-                        context
-                    )
+//                    result = fetchNewVersion(
+//                        "http://~/cms/weicheng_log/version.txt",
+//                        context
+//                    )
                 }
                 isFetchSuccessful = result != null
             } catch (e: Exception) {
@@ -360,7 +361,7 @@ fun UpdateCheckScreen() {
                 e.printStackTrace()
             }
         }
-    }
+//    }
 
     Column(
         modifier = Modifier
@@ -369,7 +370,7 @@ fun UpdateCheckScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        if (isNotMeteredNetwork) {
+//        if (isNotMeteredNetwork) {
             if (isFetchSuccessful) {
                 result?.get(0)?.let { Text(text = stringResource(R.string.latest_version) + it) }
                 Spacer(modifier = Modifier.height(8.dp))
@@ -383,26 +384,48 @@ fun UpdateCheckScreen() {
                     LocalContext.current
                 )
             } else {
-                Text(
-                    stringResource(R.string.server_disconnected_simple),
-                    fontWeight = FontWeight.Bold
-                )
+//                Text(
+//                    stringResource(R.string.server_disconnected_simple),
+//                    fontWeight = FontWeight.Bold
+//                )
             }
-        } else {
-            if(isNetworkAvailable) {
-                AssistChipConstructor(
-                    text = stringResource(R.string.cellular_or_metered_network_detected),
-                    icon = Icons.Filled.WifiOff
-                )
-            } else {
-                // No Internet Case
-                AssistChipConstructor(
-                    text = stringResource(R.string.server_disconnected),
-                    icon = Icons.Filled.CloudOff
-                )
-            }
-        }
+//        } else {
+//            if(isNetworkAvailable) {
+//                AssistChipConstructor(
+//                    text = stringResource(R.string.cellular_or_metered_network_detected),
+//                    icon = Icons.Filled.WifiOff
+//                )
+//            } else {
+//                // No Internet Case
+//                AssistChipConstructor(
+//                    text = stringResource(R.string.server_disconnected),
+//                    icon = Icons.Filled.CloudOff
+//                )
+//            }
+//        }
         var context = LocalContext.current
+        val coroutineScope = rememberCoroutineScope()
+        Button(onClick = {
+            try {
+//                withContext(Dispatchers.IO) {
+
+                coroutineScope.launch {
+                    withContext(Dispatchers.IO) {
+                        result = fetchNewVersion(
+                            "http://127.0.0.1/cms/weicheng_log/version.txt",
+                            context
+                        )
+                        isFetchSuccessful = result != null
+                    }
+                }
+//                }
+            } catch (e: Exception) {
+                // Handle exceptions if needed
+                e.printStackTrace()
+            }
+        }) {
+            Text(stringResource(R.string.check_updated_version))
+        }
         Row {
             Button(onClick = {
                 val webIntent: Intent =
@@ -418,7 +441,7 @@ fun UpdateCheckScreen() {
             Spacer(modifier = Modifier.width(8.dp))
             Button(onClick = {
                 val webIntent: Intent =
-                    Intent(Intent.ACTION_VIEW, Uri.parse("https://weicheng.app/cms/weicheng_log/releases.php"))
+                    Intent(Intent.ACTION_VIEW, Uri.parse("http://127.0.0.1/cms/weicheng_log/releases.php"))
                 try {
                     ContextCompat.startActivity(context, webIntent, null)
                 } catch (e: ActivityNotFoundException) {
